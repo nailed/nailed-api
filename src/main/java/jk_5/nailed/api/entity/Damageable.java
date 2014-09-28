@@ -40,4 +40,5 @@ public interface Damageable {
      */
     void setHealth(double health);
 
+    void heal(double amount);
 }

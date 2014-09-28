@@ -9,13 +9,22 @@ import jk_5.nailed.api.util.Checks;
  *
  * @author jk-5
  */
-class DefaultGameRule<T> implements GameRule<T> {
+public class DefaultGameRule<T> implements GameRule<T> {
 
     private final GameRuleKey<T> key;
+    private final T value;
 
     public DefaultGameRule(@Nonnull GameRuleKey<T> key) {
         Checks.notNull(key, "key");
         this.key = key;
+        this.value = this.key.getDefaultValue();
+    }
+
+    public DefaultGameRule(@Nonnull GameRuleKey<T> key, @Nonnull T value) {
+        Checks.notNull(key, "key");
+        Checks.notNull(value, "value");
+        this.key = key;
+        this.value = value;
     }
 
     @Nonnull
@@ -27,14 +36,14 @@ class DefaultGameRule<T> implements GameRule<T> {
     @Nonnull
     @Override
     public T getValue() {
-        return this.key.getDefaultValue();
+        return this.value;
     }
 
     @Override
     public String toString() {
         return "DefaultGameRule{" +
                 "key=" + key +
-                ", value=" + getValue() +
+                ", value=" + value +
                 '}';
     }
 }

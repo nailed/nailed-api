@@ -1,22 +1,23 @@
 package jk_5.nailed.api.event;
 
-import javax.annotation.Nonnull;
-
+import jk_5.eventbus.Event;
 import jk_5.nailed.api.Platform;
 
 /**
- * An event that deals with the platform.
+ * No description given
  *
- * @see Platform
  * @author jk-5
  */
-public interface PlatformEvent {
+public class PlatformEvent extends Event {
 
-    /**
-     * Get the platform.
-     *
-     * @return The platform
-     */
-    @Nonnull
-    Platform getPlatform();
+    private Platform platform;
+
+    public Platform getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(Platform platform) {
+        if(this.platform != null) throw new RuntimeException("Platform is already set");
+        this.platform = platform;
+    }
 }

@@ -24,7 +24,7 @@ public interface ScoreboardTeam {
     boolean isFriendlyFire();
     void setFriendlyFire(boolean friendlyFire);
     boolean areFriendlyInvisiblesInvisible();
-    void setFriendlyInvisiblesInvisible(boolean friendlyInvisiblesInvisible);
+    void setFriendlyInvisiblesVisible(boolean friendlyInvisiblesVisible);
     Visibility getNameTagVisibility();
     void setNameTagVisibility(Visibility nameTagVisibility);
     Visibility getDeathMessageVisibility();

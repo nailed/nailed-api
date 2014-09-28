@@ -1,6 +1,7 @@
 package jk_5.nailed.api.player;
 
 import jk_5.nailed.api.GameMode;
+import jk_5.nailed.api.chat.BaseComponent;
 import jk_5.nailed.api.command.CommandSender;
 import jk_5.nailed.api.entity.Damageable;
 import jk_5.nailed.api.entity.Feedable;
@@ -13,6 +14,7 @@ import jk_5.nailed.api.entity.PotionAffectable;
 import jk_5.nailed.api.entity.Rotatable;
 import jk_5.nailed.api.scoreboard.ScoreboardManager;
 import jk_5.nailed.api.util.Identifiable;
+import jk_5.nailed.api.world.World;
 
 /**
  * No description given
@@ -44,4 +46,9 @@ public interface Player extends Identifiable, Damageable, Feedable, Flammable, H
     ScoreboardManager getScoreboardManager();
 
     void loadResourcePack(String url, String hash);
+    BaseComponent getDescriptionComponent();
+
+    World getWorld();
+
+    boolean isOnline();
 }

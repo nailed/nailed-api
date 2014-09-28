@@ -49,6 +49,7 @@ dependencies {
     compile 'com.google.guava:guava:18.0'
     compile 'com.google.code.gson:gson:2.3'
     compile 'com.google.code.findbugs:jsr305:3.0.0'
+    compile 'com.typesafe:config:1.2.1'
 
     testCompile 'junit:junit:4.12-beta-1'
 

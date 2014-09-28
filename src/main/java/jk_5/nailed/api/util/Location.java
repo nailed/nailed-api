@@ -1,5 +1,7 @@
 package jk_5.nailed.api.util;
 
+import com.google.gson.JsonObject;
+
 import jk_5.nailed.api.math.Vector2d;
 import jk_5.nailed.api.math.Vector3d;
 import jk_5.nailed.api.math.Vector3f;
@@ -19,6 +21,10 @@ public final class Location implements Vector3d, Cloneable {
     private final double z;
     private final float yaw;
     private final float pitch;
+
+    public Location(Location location) {
+        this(location.getWorld(), location.getX(), location.getY(), location.getZ(), location.getYaw(), location.getPitch());
+    }
 
     public Location(World world, double x, double y, double z, float yaw, float pitch) {
         this.world = world;
@@ -392,5 +398,15 @@ public final class Location implements Vector3d, Cloneable {
                     (world != null ? ", world=" + world : "") +
                     '}';
         }
+    }
+
+    public static Location read(JsonObject obj){
+        Builder b = Location.builder().setWorld(null);
+        if(obj.has("x")) b.setX(obj.get("x").getAsDouble());
+        if(obj.has("y")) b.setY(obj.get("y").getAsDouble());
+        if(obj.has("z")) b.setZ(obj.get("z").getAsDouble());
+        if(obj.has("yaw")) b.setYaw(obj.get("yaw").getAsFloat());
+        if(obj.has("pitch")) b.setPitch(obj.get("pitch").getAsFloat());
+        return b.build();
     }
 }

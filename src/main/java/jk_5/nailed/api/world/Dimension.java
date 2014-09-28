@@ -19,4 +19,11 @@ public enum Dimension {
     public int getId() {
         return id;
     }
+
+    public static Dimension parse(String in){
+        if(in.equalsIgnoreCase("overworld")) return OVERWORLD;
+        if(in.equalsIgnoreCase("nether")) return NETHER;
+        if(in.equalsIgnoreCase("end")) return END;
+        return OVERWORLD;
+    }
 }

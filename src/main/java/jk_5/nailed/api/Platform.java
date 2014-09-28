@@ -1,5 +1,7 @@
 package jk_5.nailed.api;
 
+import jk_5.nailed.api.plugin.PluginManager;
+
 /**
  * The core accessor of the API. The implementation uses this to pass
  * constructed objects.
@@ -21,4 +23,13 @@ public interface Platform {
      * @return The implementation version
      */
     String getImplementationVersion();
+
+    /**
+     * Gets the implementation name.
+     *
+     * @return The implementation name
+     */
+    String getImplementationName();
+
+    PluginManager getPluginManager();
 }
