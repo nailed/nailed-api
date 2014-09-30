@@ -29,6 +29,26 @@ public class PotionEffect {
         return new Builder();
     }
 
+    public Potion getPotion() {
+        return potion;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public boolean isAmbient() {
+        return ambient;
+    }
+
+    public boolean isShowParticles() {
+        return showParticles;
+    }
+
     public static final class Builder {
 
         private Potion potion;

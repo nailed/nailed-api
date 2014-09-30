@@ -36,4 +36,6 @@ public interface PluginContainer {
      */
     Object getInstance();
 
+    PluginIdentifier getIdentifier();
+
 }

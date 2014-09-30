@@ -1,7 +1,6 @@
 package jk_5.nailed.api.mappack.metadata.json;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import javax.annotation.Nonnull;
 
@@ -19,23 +18,25 @@ import jk_5.nailed.api.mappack.metadata.TutorialStage;
  */
 public class JsonTutorial implements Tutorial {
 
-    private List<TutorialStage> stages = new ArrayList<TutorialStage>();
+    private TutorialStage[] stages;
 
     public JsonTutorial(JsonObject json) throws MappackConfigurationException {
+        List<TutorialStage> builder = new ArrayList<TutorialStage>();
         if(json.has("stages")){
             for(JsonElement e : json.getAsJsonArray("stages")){
                 if(e.isJsonObject()){
-                    stages.add(new JsonTutorialStage(e.getAsJsonObject()));
+                    builder.add(new JsonTutorialStage(e.getAsJsonObject()));
                 }else{
                     throw new MappackConfigurationException("Invalid json element in tutorial stages array: " + e.toString());
                 }
             }
         }
+        stages = builder.toArray(new TutorialStage[builder.size()]);
     }
 
     @Nonnull
     @Override
-    public Collection<TutorialStage> stages() {
+    public TutorialStage[] stages() {
         return stages;
     }
 }

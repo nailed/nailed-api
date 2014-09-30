@@ -1,6 +1,5 @@
 package jk_5.nailed.api.mappack.metadata;
 
-import java.util.Collection;
 import javax.annotation.Nonnull;
 
 /**
@@ -11,5 +10,5 @@ import javax.annotation.Nonnull;
 public interface Tutorial {
 
     @Nonnull
-    Collection<TutorialStage> stages();
+    TutorialStage[] stages();
 }

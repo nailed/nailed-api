@@ -32,6 +32,11 @@ public abstract class Stat {
         listeners.add(listener);
     }
 
+    public void removeListener(@Nonnull StatListener listener){
+        Checks.notNull(listener, "listener");
+        listeners.remove(listener);
+    }
+
     public boolean isEnabled() {
         return state;
     }

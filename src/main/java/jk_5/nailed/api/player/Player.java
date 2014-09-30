@@ -1,5 +1,7 @@
 package jk_5.nailed.api.player;
 
+import javax.annotation.Nullable;
+
 import jk_5.nailed.api.GameMode;
 import jk_5.nailed.api.chat.BaseComponent;
 import jk_5.nailed.api.command.CommandSender;
@@ -12,6 +14,8 @@ import jk_5.nailed.api.entity.Movable;
 import jk_5.nailed.api.entity.Positionable;
 import jk_5.nailed.api.entity.PotionAffectable;
 import jk_5.nailed.api.entity.Rotatable;
+import jk_5.nailed.api.map.Map;
+import jk_5.nailed.api.messaging.PluginMessageRecipient;
 import jk_5.nailed.api.scoreboard.ScoreboardManager;
 import jk_5.nailed.api.util.Identifiable;
 import jk_5.nailed.api.world.World;
@@ -21,7 +25,7 @@ import jk_5.nailed.api.world.World;
  *
  * @author jk-5
  */
-public interface Player extends Identifiable, Damageable, Feedable, Flammable, HealthScalable, LevelProgressable, Movable, Positionable, Rotatable, PotionAffectable, CommandSender {
+public interface Player extends Identifiable, Damageable, Feedable, Flammable, HealthScalable, LevelProgressable, Movable, Positionable, Rotatable, PotionAffectable, CommandSender, PluginMessageRecipient {
 
     /**
      * Gets the players last known username
@@ -51,4 +55,11 @@ public interface Player extends Identifiable, Damageable, Feedable, Flammable, H
     World getWorld();
 
     boolean isOnline();
+
+    void teleportTo(World world);
+
+    void setAllowedToFly(boolean isAllowedToFly);
+
+    @Nullable
+    Map getMap();
 }
