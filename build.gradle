@@ -27,6 +27,10 @@ version = '1.0.1-SNAPSHOT'
 repositories {
     mavenLocal()
     mavenCentral()
+    maven {
+        url "http://maven.jk-5.tk"
+        name "jk-5"
+    }
 }
 
 configurations {
