@@ -24,13 +24,13 @@ public final class DefaultMappackWorld implements MappackWorld {
     @Nonnull
     @Override
     public String name() {
-        return null;
+        return "default";
     }
 
     @Nonnull
     @Override
     public String generator() {
-        return "null";
+        return "void";
     }
 
     @Nonnull

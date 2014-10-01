@@ -16,6 +16,12 @@ public final class DefaultGameRuleKey<T> implements GameRuleKey<T> {
 
     private static final Map<String, GameRuleKey<?>> names = new HashMap<String, GameRuleKey<?>>();
 
+    static {
+        //Force it to be loaded
+        Class<?> cl = GameRuleKey.class;
+        GameRuleKey.COMMAND_BLOCK_OUTPUT.getName();
+    }
+
     @Nonnull
     private final String name;
 

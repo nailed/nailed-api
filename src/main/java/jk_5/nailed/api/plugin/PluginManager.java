@@ -3,8 +3,6 @@ package jk_5.nailed.api.plugin;
 import java.util.Collection;
 import javax.annotation.Nullable;
 
-import org.slf4j.Logger;
-
 public interface PluginManager {
 
     /**
@@ -22,14 +20,6 @@ public interface PluginManager {
      */
     @Nullable
     PluginContainer getPlugin(Object identifier);
-
-    /**
-     * Gets the {@link Logger} for the {@link PluginContainer}.
-     *
-     * @param plugin The plugin
-     * @return The logger
-     */
-    Logger getLogger(PluginContainer plugin);
 
     /**
      * Gets a {@link Collection} of all {@link PluginContainer}s
