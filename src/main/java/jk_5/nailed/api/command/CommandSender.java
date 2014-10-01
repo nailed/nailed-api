@@ -12,4 +12,6 @@ public interface CommandSender {
     String getName();
 
     void sendMessage(BaseComponent... component);
+
+    BaseComponent getDescriptionComponent();
 }
