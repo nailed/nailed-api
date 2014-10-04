@@ -25,4 +25,29 @@ public class RegisterCommandsEvent extends PlatformEvent {
     public void registerCallable(CommandCallable callable, String... aliases){
         dispatcherNode.register(callable, aliases);
     }
+
+    public SubcommandRegistrar subcommand(String... aliases){
+        return new SubcommandRegistrar(dispatcherNode.group(aliases));
+    }
+
+    public static final class SubcommandRegistrar {
+
+        private final DispatcherNode dispatcherNode;
+
+        private SubcommandRegistrar(DispatcherNode dispatcherNode) {
+            this.dispatcherNode = dispatcherNode;
+        }
+
+        public void registerCommandClass(Object obj){
+            dispatcherNode.registerMethods(obj);
+        }
+
+        public void registerCallable(CommandCallable callable, String... aliases){
+            dispatcherNode.register(callable, aliases);
+        }
+
+        public SubcommandRegistrar subcommand(String... aliases){
+            return new SubcommandRegistrar(dispatcherNode.group(aliases));
+        }
+    }
 }

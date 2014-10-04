@@ -36,6 +36,8 @@ public class PrivateMessagePlugin {
     @EventHandler
     public void registerCommands(RegisterCommandsEvent event){
         event.registerCommandClass(this);
+
+        event.subcommand("test").subcommand("test2").registerCommandClass(this);
     }
 
     @EventHandler
