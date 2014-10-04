@@ -53,7 +53,7 @@ import jk_5.nailed.api.command.util.auth.AuthorizationException;
  * The implementation of a {@link CommandCallable} for the
  * {@link ParametricBuilder}.
  */
-class ParametricCallable implements CommandCallable {
+public class ParametricCallable implements CommandCallable {
 
     private final ParametricBuilder builder;
     private final Object object;

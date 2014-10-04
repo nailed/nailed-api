@@ -16,14 +16,20 @@ public enum GameMode {
     SPECTATOR(3);
 
     private final int id;
+    private final String name;
     private static final Map<Integer, GameMode> BY_ID = Maps.newHashMap();
 
     GameMode(int id) {
         this.id = id;
+        this.name = this.name().toLowerCase();
     }
 
     public int getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public static GameMode byId(int id){

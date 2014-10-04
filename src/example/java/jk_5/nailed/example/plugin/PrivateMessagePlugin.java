@@ -8,8 +8,8 @@ import org.apache.logging.log4j.Logger;
 import jk_5.eventbus.EventHandler;
 import jk_5.nailed.api.chat.TextComponent;
 import jk_5.nailed.api.command.Command;
-import jk_5.nailed.api.command.CommandSender;
 import jk_5.nailed.api.command.parametric.annotation.Text;
+import jk_5.nailed.api.command.sender.CommandSender;
 import jk_5.nailed.api.event.RegisterCommandsEvent;
 import jk_5.nailed.api.event.plugin.RegisterAdditionalEventHandlersEvent;
 import jk_5.nailed.api.player.Player;
@@ -35,9 +35,7 @@ public class PrivateMessagePlugin {
 
     @EventHandler
     public void registerCommands(RegisterCommandsEvent event){
-        event.registerCommandClass(this);
-
-        event.subcommand("test").subcommand("test2").registerCommandClass(this);
+        event.subcommand("example").registerCommandClass(this);
     }
 
     @EventHandler

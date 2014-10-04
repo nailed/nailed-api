@@ -1,4 +1,4 @@
-package jk_5.nailed.api.command;
+package jk_5.nailed.api.command.sender;
 
 import jk_5.nailed.api.chat.BaseComponent;
 

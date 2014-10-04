@@ -6,9 +6,15 @@ package jk_5.nailed.api.world;
  * @author jk-5
  */
 public enum WeatherType {
-    DRY,
-    RAIN,
-    THUNDER;
+    DRY("dry"),
+    RAIN("raining"),
+    THUNDER("thundering");
+
+    private final String name;
+
+    WeatherType(String name) {
+        this.name = name;
+    }
 
     public boolean isDry(){
         return this == DRY;
@@ -24,5 +30,9 @@ public enum WeatherType {
 
     public boolean isSunny(){
         return this == DRY;
+    }
+
+    public String getName() {
+        return name;
     }
 }

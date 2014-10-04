@@ -4,7 +4,9 @@ import javax.annotation.Nullable;
 
 import jk_5.nailed.api.GameMode;
 import jk_5.nailed.api.chat.BaseComponent;
-import jk_5.nailed.api.command.CommandSender;
+import jk_5.nailed.api.command.sender.CommandSender;
+import jk_5.nailed.api.command.sender.MapCommandSender;
+import jk_5.nailed.api.command.sender.WorldCommandSender;
 import jk_5.nailed.api.entity.Damageable;
 import jk_5.nailed.api.entity.Feedable;
 import jk_5.nailed.api.entity.Flammable;
@@ -25,7 +27,7 @@ import jk_5.nailed.api.world.World;
  *
  * @author jk-5
  */
-public interface Player extends Identifiable, Damageable, Feedable, Flammable, HealthScalable, LevelProgressable, Movable, Positionable, Rotatable, PotionAffectable, CommandSender, PluginMessageRecipient {
+public interface Player extends Identifiable, Damageable, Feedable, Flammable, HealthScalable, LevelProgressable, Movable, Positionable, Rotatable, PotionAffectable, CommandSender, PluginMessageRecipient, WorldCommandSender, MapCommandSender {
 
     /**
      * Gets the players last known username

@@ -7,7 +7,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import jk_5.nailed.api.chat.BaseComponent;
-import jk_5.nailed.api.command.CommandSender;
+import jk_5.nailed.api.command.sender.CommandSender;
 import jk_5.nailed.api.map.GameTypeRegistry;
 import jk_5.nailed.api.mappack.MappackRegistry;
 import jk_5.nailed.api.messaging.Messenger;
