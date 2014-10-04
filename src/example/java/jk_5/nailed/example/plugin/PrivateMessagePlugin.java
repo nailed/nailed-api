@@ -27,7 +27,7 @@ public class PrivateMessagePlugin {
 
     public Logger logger = LogManager.getLogger(PrivateMessagePlugin.class);
 
-    @Configuration
+    @Configuration(defaults = "privmsgplugin.conf")
     public Config config;
 
     @PluginIdentifier.Instance
@@ -40,6 +40,8 @@ public class PrivateMessagePlugin {
 
     @EventHandler
     public void registerHandlers(RegisterAdditionalEventHandlersEvent event){
+        logger.info("str: " + config.getString("teststring"));
+        logger.info("int: " + config.getString("testnumber"));
         logger.info("Identifier: " + identifier.toString());
     }
 
