@@ -35,6 +35,7 @@ public class JsonMappackWorld implements MappackWorld {
     private final boolean disableDamage;
     private final boolean disableBlockBreaking;
     private final boolean disableBlockPlacement;
+    private final boolean isDefault;
 
     public JsonMappackWorld(@Nullable String name, @Nonnull JsonObject json) throws MappackConfigurationException {
         this(name, json, DefaultMappackWorld.INSTANCE);
@@ -56,6 +57,7 @@ public class JsonMappackWorld implements MappackWorld {
         this.disableDamage = (json.has("disableDamage") ? json.get("disableDamage").getAsBoolean() : parent.disableDamage());
         this.disableBlockBreaking = (json.has("disableBlockBreaking") ? json.get("disableBlockBreaking").getAsBoolean() : parent.disableBlockBreaking());
         this.disableBlockPlacement = (json.has("disableBlockPlacement") ? json.get("disableBlockPlacement").getAsBoolean() : parent.disableBlockPlacement());
+        this.isDefault = json.has("default") && json.get("default").getAsBoolean();
     }
 
     @Nonnull
@@ -118,5 +120,10 @@ public class JsonMappackWorld implements MappackWorld {
     @Override
     public boolean disableBlockPlacement() {
         return disableBlockPlacement;
+    }
+
+    @Override
+    public boolean isDefault() {
+        return isDefault;
     }
 }

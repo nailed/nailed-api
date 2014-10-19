@@ -21,6 +21,7 @@ public interface MappackWorld {
     @Nonnull GameRules gameRules();
     @Nonnull String resourcePackUrl();
     @Nonnull Difficulty difficulty();
+    boolean isDefault();
 
     boolean disableFood();
     boolean disableDamage();

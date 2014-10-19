@@ -1,5 +1,6 @@
 package jk_5.nailed.api.player;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import jk_5.nailed.api.GameMode;
@@ -16,10 +17,12 @@ import jk_5.nailed.api.entity.Movable;
 import jk_5.nailed.api.entity.Positionable;
 import jk_5.nailed.api.entity.PotionAffectable;
 import jk_5.nailed.api.entity.Rotatable;
+import jk_5.nailed.api.map.GameWinnable;
 import jk_5.nailed.api.map.Map;
 import jk_5.nailed.api.messaging.PluginMessageRecipient;
 import jk_5.nailed.api.scoreboard.ScoreboardManager;
 import jk_5.nailed.api.util.Identifiable;
+import jk_5.nailed.api.util.TitleMessage;
 import jk_5.nailed.api.world.World;
 
 /**
@@ -27,7 +30,7 @@ import jk_5.nailed.api.world.World;
  *
  * @author jk-5
  */
-public interface Player extends Identifiable, Damageable, Feedable, Flammable, HealthScalable, LevelProgressable, Movable, Positionable, Rotatable, PotionAffectable, CommandSender, PluginMessageRecipient, WorldCommandSender, MapCommandSender {
+public interface Player extends Identifiable, Damageable, Feedable, Flammable, HealthScalable, LevelProgressable, Movable, Positionable, Rotatable, PotionAffectable, CommandSender, PluginMessageRecipient, WorldCommandSender, MapCommandSender, GameWinnable {
 
     /**
      * Gets the players last known username
@@ -64,4 +67,13 @@ public interface Player extends Identifiable, Damageable, Feedable, Flammable, H
 
     @Nullable
     Map getMap();
+
+    void displayTitle(@Nonnull TitleMessage title);
+    void clearTitle();
+
+    void displaySubtitle(BaseComponent... message);
+    void setSubtitle(BaseComponent... message);
+    void clearSubtitle();
+
+    void clearInventory();
 }

@@ -15,4 +15,11 @@ public interface GameManager {
 
     boolean hasCustomGameType();
     @Nonnull GameType getGameType();
+
+    void setWinner(@Nonnull GameWinnable winner);
+
+    void setWinInterrupt(boolean winInterrupt);
+    boolean isWinInterrupt();
+    void setUnreadyInterrupt(boolean unreadyInterrupt);
+    boolean isUnreadyInterrupt();
 }

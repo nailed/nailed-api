@@ -82,4 +82,9 @@ public final class DefaultMappackWorld implements MappackWorld {
     public boolean disableBlockPlacement() {
         return false;
     }
+
+    @Override
+    public boolean isDefault() {
+        return true;
+    }
 }

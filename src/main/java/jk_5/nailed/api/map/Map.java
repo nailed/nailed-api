@@ -23,6 +23,7 @@ public interface Map {
 
     @Nonnull Collection<World> worlds();
     @Nonnull World[] worldsArray();
+    @Nonnull World defaultWorld();
     @Nullable Mappack mappack();
     void addWorld(@Nonnull World world);
 
