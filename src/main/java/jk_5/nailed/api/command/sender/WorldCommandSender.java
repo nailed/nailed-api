@@ -7,7 +7,7 @@ import jk_5.nailed.api.world.World;
  *
  * @author jk-5
  */
-public interface WorldCommandSender extends CommandSender {
+public interface WorldCommandSender extends CommandSender, MapCommandSender {
 
     World getWorld();
 }
