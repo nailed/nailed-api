@@ -29,7 +29,7 @@ public final class SubscribedStat extends Stat {
     }
 
     public void onEvent(@Nonnull StatEvent event){
-        if(event.getName() != track) return;
+        if(!event.getName().equals(track)) return;
         if(this.state == event.getState()) return;
         this.state = event.getState();
         if(this.state){
