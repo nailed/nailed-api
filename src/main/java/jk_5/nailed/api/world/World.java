@@ -52,7 +52,7 @@ public interface World {
 
     MappackWorld getConfig();
 
-    EditableGameRules getGameRules();
+    EditableGameRules getGamerules(); //TODO: rename this to getGameRules then mixins support multiple methods with the same name
 
     void onPlayerJoined(Player player);
     void onPlayerLeft(Player player);
@@ -63,6 +63,6 @@ public interface World {
     WeatherType getWeather();
     void setWeather(WeatherType weather);
 
-    Difficulty getDifficulty();
+    Difficulty getDifficultyValue(); //TODO: rename this to getDifficulty when mixins support multiple methods with the same name
     void setDifficulty(Difficulty difficulty);
 }
