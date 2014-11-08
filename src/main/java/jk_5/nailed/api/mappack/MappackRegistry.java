@@ -48,4 +48,6 @@ public interface MappackRegistry {
     Collection<String> getAllIds();
 
     boolean unregister(@Nonnull Mappack mappack);
+
+    void reload();
 }
