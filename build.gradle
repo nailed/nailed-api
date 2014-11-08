@@ -22,7 +22,7 @@ apply plugin: 'maven'
 apply plugin: 'idea'
 
 group = 'jk_5.nailed'
-version = '1.1.0'
+version = '1.2.0-SNAPSHOT'
 
 repositories {
     mavenLocal()
