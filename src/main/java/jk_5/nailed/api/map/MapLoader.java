@@ -1,11 +1,10 @@
 package jk_5.nailed.api.map;
 
+import io.netty.util.concurrent.Future;
+import jk_5.nailed.api.mappack.Mappack;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-
-import io.netty.util.concurrent.Future;
-
-import jk_5.nailed.api.mappack.Mappack;
 
 /**
  * No description given
@@ -14,7 +13,6 @@ import jk_5.nailed.api.mappack.Mappack;
  */
 public interface MapLoader {
 
-    boolean setLobbyMappack(@Nonnull Mappack mappack);
     @Nonnull Mappack getLobbyMappack();
     @Nonnull Map getLobby();
     @Nullable Map getMap(int mapid);

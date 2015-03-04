@@ -23,8 +23,4 @@ public class RegisterMappacksEvent extends PlatformEvent {
     public boolean registerMappack(Mappack mappack){
         return registry.register(mappack);
     }
-
-    public boolean setLobbyMappack(Mappack mappack){
-        return mapLoader.setLobbyMappack(mappack);
-    }
 }
