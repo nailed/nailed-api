@@ -1,5 +1,9 @@
 package jk_5.nailed.api.scoreboard;
 
+import com.google.common.collect.Maps;
+
+import java.util.Map;
+
 /**
  * No description given
  *
@@ -11,6 +15,7 @@ public enum Visibility {
     HIDE_FOR_OTHER_TEAMS("hideForOtherTeams", 2),
     HIDE_FOR_OWN_TEAM("hideForOwnTeam", 3);
 
+    private static final Map<String, Visibility> BY_NAME = Maps.newHashMap();
     private final String name;
     private final int id;
 
@@ -25,5 +30,15 @@ public enum Visibility {
 
     public int getId() {
         return id;
+    }
+
+    public static Visibility getByName(String name){
+        return BY_NAME.get(name.toLowerCase());
+    }
+
+    static {
+        for(Visibility v : values()){
+            BY_NAME.put(v.name.toLowerCase(), v);
+        }
     }
 }
