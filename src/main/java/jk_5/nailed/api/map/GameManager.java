@@ -9,7 +9,7 @@ import javax.annotation.Nonnull;
  */
 public interface GameManager {
 
-    boolean startGame();
+    GameStartResult startGame();
     boolean endGame();
     boolean isGameRunning();
 
