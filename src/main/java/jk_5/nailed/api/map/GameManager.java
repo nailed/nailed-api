@@ -1,6 +1,7 @@
 package jk_5.nailed.api.map;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /**
  * No description given
@@ -9,12 +10,12 @@ import javax.annotation.Nonnull;
  */
 public interface GameManager {
 
-    GameStartResult startGame();
+    @Nonnull GameStartResult startGame();
     boolean endGame();
     boolean isGameRunning();
 
     boolean hasCustomGameType();
-    @Nonnull GameType getGameType();
+    @Nullable GameType getGameType();
 
     void setWinner(@Nonnull GameWinnable winner);
 

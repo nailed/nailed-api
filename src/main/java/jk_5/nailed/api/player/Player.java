@@ -1,22 +1,11 @@
 package jk_5.nailed.api.player;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 import jk_5.nailed.api.GameMode;
 import jk_5.nailed.api.chat.BaseComponent;
 import jk_5.nailed.api.command.sender.CommandSender;
 import jk_5.nailed.api.command.sender.MapCommandSender;
 import jk_5.nailed.api.command.sender.WorldCommandSender;
-import jk_5.nailed.api.entity.Damageable;
-import jk_5.nailed.api.entity.Feedable;
-import jk_5.nailed.api.entity.Flammable;
-import jk_5.nailed.api.entity.HealthScalable;
-import jk_5.nailed.api.entity.LevelProgressable;
-import jk_5.nailed.api.entity.Movable;
-import jk_5.nailed.api.entity.Positionable;
-import jk_5.nailed.api.entity.PotionAffectable;
-import jk_5.nailed.api.entity.Rotatable;
+import jk_5.nailed.api.entity.*;
 import jk_5.nailed.api.map.GameWinnable;
 import jk_5.nailed.api.map.Map;
 import jk_5.nailed.api.messaging.PluginMessageRecipient;
@@ -24,6 +13,9 @@ import jk_5.nailed.api.scoreboard.ScoreboardManager;
 import jk_5.nailed.api.util.Identifiable;
 import jk_5.nailed.api.util.TitleMessage;
 import jk_5.nailed.api.world.World;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /**
  * No description given
@@ -48,9 +40,9 @@ public interface Player extends Identifiable, Damageable, Feedable, Flammable, H
 
     GameMode getGameMode();
 
-    void setGameMode(GameMode gameMode);
+    void setGameMode(@Nonnull GameMode gameMode);
 
-    void kick(String reason);
+    void kick(@Nonnull String reason);
 
     ScoreboardManager getScoreboardManager();
 

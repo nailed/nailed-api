@@ -16,6 +16,6 @@ public interface MapLoader {
     @Nonnull Mappack getLobbyMappack();
     @Nonnull Map getLobby();
     @Nullable Map getMap(int mapid);
-    @Nonnull Map getOrCreateMap(int mapid);
+    @Deprecated @Nonnull Map getOrCreateMap(int mapid);
     @Nonnull Future<Map> createMapFor(@Nonnull Mappack mappack);
 }
