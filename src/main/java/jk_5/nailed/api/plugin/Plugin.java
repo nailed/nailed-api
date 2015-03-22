@@ -18,6 +18,8 @@ public @interface Plugin {
     /**
      * An ID for the plugin to be used internally. The ID should be unique as to
      * not conflict with other plugins.
+     *
+     * @return The id of the plugin
      */
     String id();
 

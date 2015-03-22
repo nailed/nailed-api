@@ -17,21 +17,12 @@
 
 package jk_5.nailed.api.command.parametric;
 
-import java.lang.reflect.Method;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import javax.annotation.Nullable;
-
 import jk_5.nailed.api.command.Command;
 import jk_5.nailed.api.command.CommandCallable;
 import jk_5.nailed.api.command.CommandException;
 import jk_5.nailed.api.command.Require;
 import jk_5.nailed.api.command.completion.CommandCompleter;
 import jk_5.nailed.api.command.completion.NullCompleter;
-import jk_5.nailed.api.command.context.CommandContext;
 import jk_5.nailed.api.command.dispatcher.Dispatcher;
 import jk_5.nailed.api.command.parametric.annotation.Switch;
 import jk_5.nailed.api.command.parametric.binding.Binding;
@@ -42,6 +33,14 @@ import jk_5.nailed.api.command.parametric.handler.InvokeHandler;
 import jk_5.nailed.api.command.parametric.handler.InvokeListener;
 import jk_5.nailed.api.command.util.auth.Authorizer;
 import jk_5.nailed.api.command.util.auth.NullAuthorizer;
+
+import javax.annotation.Nullable;
+import java.lang.reflect.Method;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -115,13 +114,13 @@ public class ParametricBuilder {
      * a listener may be called, in the case of a {@link CommandException} being
      * thrown at any time before the appropriate listener or handler is called.
      * It is possible for a 
-     * {@link InvokeHandler#preInvoke(Object, java.lang.reflect.Method, ParameterData[], Object[], CommandContext)} to
+     * {link InvokeHandler#preInvoke(Object, java.lang.reflect.Method, ParameterData[], Object[], CommandContext)} to
      * be called for a invocation handler, but not the associated
-     * {@link InvokeHandler#postInvoke(Object, java.lang.reflect.Method, ParameterData[], Object[], CommandContext)}.</p>
+     * {link InvokeHandler#postInvoke(Object, java.lang.reflect.Method, ParameterData[], Object[], CommandContext)}.</p>
      * 
      * <p>An example of an invocation listener is one to handle
      * {@link Require}, by first checking to see if permission is available
-     * in a {@link InvokeHandler#preInvoke(Object, java.lang.reflect.Method, ParameterData[], Object[], CommandContext)}
+     * in a {link InvokeHandler#preInvoke(Object, java.lang.reflect.Method, ParameterData[], Object[], CommandContext)}
      * call. If permission is not found, then an appropriate {@link CommandException}
      * can be thrown to cease invocation.</p>
      * 

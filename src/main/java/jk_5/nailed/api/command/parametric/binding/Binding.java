@@ -17,15 +17,15 @@
 
 package jk_5.nailed.api.command.parametric.binding;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Type;
-import java.util.List;
-
 import jk_5.nailed.api.command.CommandException;
 import jk_5.nailed.api.command.parametric.ParameterData;
 import jk_5.nailed.api.command.parametric.ParameterException;
 import jk_5.nailed.api.command.parametric.ParametricBuilder;
 import jk_5.nailed.api.command.parametric.argument.ArgumentStack;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Type;
+import java.util.List;
 
 /**
  * A binding injects instances of the parameters of methods (that are
@@ -78,6 +78,7 @@ public interface Binding {
      * @return an object parsed for the given parameter
      * @throws ParameterException thrown if the parameter could not be formulated
      * @throws CommandException on a command exception
+     * @throws InvocationTargetException when the hander could not be called
      */
     Object bind(ParameterData parameter, ArgumentStack scoped, boolean onlyConsume) throws ParameterException, CommandException, InvocationTargetException;
 

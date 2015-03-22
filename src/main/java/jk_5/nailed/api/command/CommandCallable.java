@@ -37,6 +37,7 @@ public interface CommandCallable extends CommandCompleter {
      * @param parentCommands a list of parent commands, with the first most entry being the top-level command
      * @return the called command, or null if there was no command found
      * @throws CommandException thrown on a command error
+     * @throws AuthorizationException when the user does not have the required permissions
      */
     boolean call(String arguments, CommandLocals locals, String[] parentCommands) throws CommandException, AuthorizationException;
     

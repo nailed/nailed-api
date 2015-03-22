@@ -17,14 +17,14 @@
 
 package jk_5.nailed.api.command.parametric.handler;
 
-import java.lang.reflect.Method;
-
 import jk_5.nailed.api.command.CommandException;
 import jk_5.nailed.api.command.context.CommandContext;
 import jk_5.nailed.api.command.context.CommandLocals;
 import jk_5.nailed.api.command.parametric.ParameterData;
 import jk_5.nailed.api.command.parametric.ParameterException;
 import jk_5.nailed.api.command.parametric.ParametricBuilder;
+
+import java.lang.reflect.Method;
 
 /**
  * Called before and after a command is invoked for commands executed by a
@@ -50,6 +50,7 @@ public interface InvokeHandler {
      * @param locals the locals object
      * @throws CommandException can be thrown for an error, which will stop invocation
      * @throws ParameterException on parameter error
+     * @return true if the command may be executed
      */
     boolean preProcess(Object object, Method method, ParameterData[] parameters,
                        CommandContext context, CommandLocals locals) throws CommandException, ParameterException;

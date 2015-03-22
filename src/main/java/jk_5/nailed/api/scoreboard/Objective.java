@@ -40,7 +40,7 @@ public interface Objective {
      * Gets the score object for the specified name, or creating one if it doesn't already exist.
      * Note that the name may not be bigger than 16.
      *
-     * @param name The name of the score object. (<= 16).
+     * @param name The name of the score object. (should not be longer than 16).
      * @return The score object.
      * @throws IllegalArgumentException When the name is longer than 16.
      */

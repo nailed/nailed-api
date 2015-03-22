@@ -1,8 +1,8 @@
 package jk_5.nailed.api.mappack;
 
-import java.util.Collection;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.Collection;
 
 /**
  * This class is responsible for tracking, loading or registering mappacks
@@ -35,7 +35,7 @@ public interface MappackRegistry {
      * Returns all the mappacks that implement or extend the given class
      *
      * @param cl the class to check for
-     * @tparam T the type of the mappack class, which is the same type as will be returned
+     * @param <T> the type of the mappack class, which is the same type as will be returned
      * @return an array of all the mappacks with the given type
      */
     @Nonnull
